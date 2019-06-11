@@ -16,9 +16,9 @@ for(let k in modules){
 			apis[k2] = modules[k][k2];
 		}else{
 			MessageBox.alert(`接口名称< ${k2} >重复,请重命名后再次尝试！`, '警告', {
-        confirmButtonText: '确定',
-        type: 'error'
-      })
+				confirmButtonText: '确定',
+				type: 'error'
+			})
 		}
 	}
 }

@@ -94,6 +94,7 @@ export default {
     }
   },
   created() {
+    console.log(utils);
     this.$api.orderList({}).then((response)=>{
       console.log(response);
     })
