@@ -16,9 +16,9 @@ Vue.prototype.$qs = qs;
 
 /* 第三方组件库导入 */
 
-//取色器
-import vcolorpicker from 'vcolorpicker'
-Vue.use(vcolorpicker)
+//取色器(此插件有兼容性问题，待定)
+// import vcolorpicker from 'vcolorpicker'
+// Vue.use(vcolorpicker)
 
 //拖拽
 import VueDND from 'awe-dnd';
