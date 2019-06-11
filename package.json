@@ -1,8 +1,8 @@
 {
-  "name": "micromall",
-  "version": "1.1.0",
-  "description": "A Vue.js project",
-  "author": "sunbl <2811865128@qq.com>",
+  "name": "framework",
+  "version": "1.0.0",
+  "description": "A Base Vue Framework",
+  "author": "fangyuan <fangyuan@300.cn>",
   "license": "",
   "private": true,
   "scripts": {
@@ -10,10 +10,6 @@
     "build:dep": "cross-env NODE_ENV=production env_config=dep node build/build.js",
     "build:dev": "cross-env NODE_ENV=development env_config=dev node build/build.js",
     "build:prod": "cross-env NODE_ENV=production env_config=prod node build/build.js",
-    "lint": "eslint --ext .js,.vue src",
-    "test": "npm run lint",
-    "precommit": "lint-staged",
-    "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml"
   },
   "lint-staged": {},
   "dependencies": {
