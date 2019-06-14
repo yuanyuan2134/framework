@@ -21,12 +21,14 @@ Vue.config.productionTip = false
 
 
 /* 第三方 */
-import './thirdParty.js' 
+import './thirdParty' 
 
 /* 自定义全局变量或方法挂载 */
 import utils from '@/utils';
-Vue.prototype.routeTo = utils.routeTo; //示例  routeTo('login', {a:1, b:2})
-Vue.prototype.percent = utils.percent;
+console.log(utils);
+Vue.prototype.$routeTo = utils.routeTo; //示例  routeTo('login', {a:1, b:2})
+Vue.prototype.$percent = utils.percent;
+Vue.prototype.$globalEvent = utils.eventHub.default;  //挂载全局事件对象，跨组件发通知,单例对象
 import api from '@/api';
 Vue.prototype.$api = api;
 

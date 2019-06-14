@@ -11,8 +11,8 @@
   ],
   "plugins": [
     "transform-vue-jsx", 
-    "transform-runtime",
-    "transform-remove-console"  //编译时去掉console.*
+    "transform-runtime"
+    // "transform-remove-console"  //编译时去掉console.*
   ],
   "env": {
     "development":{

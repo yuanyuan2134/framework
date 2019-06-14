@@ -1,112 +1,110 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <el-button type="primary">测试按钮</el-button>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          核心文档
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          论坛
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          社区
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>生态系统</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+    <hr>
+
+    <h1>element-ui</h1>
+    <el-row>
+      <el-button>默认按钮</el-button>
+      <el-button type="primary">主要按钮</el-button>
+      <el-button type="success">成功按钮</el-button>
+      <el-button type="info">信息按钮</el-button>
+      <el-button type="warning">警告按钮</el-button>
+      <el-button type="danger">危险按钮</el-button>
+    </el-row>
+    <hr>
+
+    <div class="map-demo">
+      <div class="map1">
+        <h1>腾讯地图1-天安门</h1>
+        <demoMap1 :width="'600px'" :height="'300px'" :zoom="11" :center="[39.9046900000,116.4071700000]"></demoMap1>
+      </div>
+      <div class="map2">
+        <h1>腾讯地图2-数码庄园</h1>
+        <demoMap2 :width="'600px'" :height="'300px'" :zoom="15" :center="[39.7832100000,116.4994700000]"></demoMap2>
+      </div>
+    </div>
+    <hr>
+
+    <h1>取色器</h1>
+    <colorPicker  v-model="color"></colorPicker >
+    <div style="width:250px;height:30px;line-height:30px;margin:0 auto;" :style="{backgroundColor: color}">选中色(点击上面的方块选择)</div>
+    <hr>
+
+    <h1>时间轴</h1>
+    <div style="width:700px;margin:0 auto;">
+      <light-timeline :items="items">
+        <template slot='tag' slot-scope='{ item }'>
+          {{item.tag}}
+        </template>
+        <template slot='content' slot-scope='{ item }'>
+          {{item.content}}, {{item.context}}
+        </template>
+      </light-timeline>
+    </div>
+    <hr>
+
+    <h1>四级联动</h1>
+    <area-select type='all' v-model='selected' :data='$pcaa' :level='3'></area-select>
+    <p>{{selected}}</p>
+    <hr>
+
+    <h1>图表</h1>
+    <demoChart v-if="chartReady" :width="'900px'" :title="'测试图表'" style="margin: 0 auto;"></demoChart>
+    <hr>
+
   </div>
 </template>
 
 <script>
 import utils from '@/utils';
+import demoMap1 from '@/components/qqMap/demoMap1';
+import demoMap2 from '@/components/qqMap/demoMap2';
+import demoChart from '@/components/charts/demoChart';
 export default {
   name: 'HelloWorld',
+  components: {demoMap1, demoMap2, demoChart},
   data () {
     return {
-      msg: '欢迎创建您的vue应用'
+      msg: '中企电商VUE框架',
+      color: '#ff0000',
+      items: [
+        {
+          tag: '2019-02-12',
+          content: '测试内容测试内容测试内容测试内容测试内容测试内容'
+        },
+        {
+          tag: '2019-02-13',
+          type: 'circle',
+          content: '练习内容练习内容练习内容练习内容练习内容练习内容练习内容'
+        },
+        {
+          tag: '2019-02-18',
+          content: '其他内容其他内容其他内容其他内容其他内容其他内容'
+        }
+      ],
+      chartReady: false,
+      selected: []
     }
   },
   created() {
-    console.log(utils);
+    const _self = this;
     this.$api.orderList({}).then((response)=>{
       console.log(response);
     })
     .catch((error)=>{
       console.log(error);
     })
+
+    setTimeout(()=>{
+      _self.chartReady = true;
+    },1000)
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 .hello{
       text-align: center;
 }
@@ -123,5 +121,15 @@ li {
 }
 a {
   color: #42b983;
+}
+.map-demo{
+  display:flex;
+  justify-content: flex-start;
+  .map1{
+    width:60%
+  }
+  .map2{
+    width:40%;
+  }
 }
 </style>

@@ -1,9 +1,6 @@
-@import './variables.scss';
 @import './mixin.scss';
-@import './transition.scss';
 @import './element-ui.scss';
 @import './sidebar.scss';
-@import './btn.scss';
 @font-face {
   font-family: 'PingFangSC-Regular';
   src: url('../font/PingFangSCRegular.ttf'); //你的资源目录
@@ -37,14 +34,6 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
-}
-
-.no-padding {
-  padding: 0px !important;
-}
-
-.padding-content {
-  padding: 4px 0;
 }
 
 a:focus,
@@ -124,19 +113,6 @@ code {
   }
 }
 
-.warn-content{
-  background: rgba(66,185,131,.1);
-  border-radius: 2px;
-  padding: 16px;
-  padding: 1rem;
-  line-height: 1.6rem;
-  word-spacing: .05rem;
-  a{
-    color: #42b983;
-    font-weight: 600;
-  }
-}
-
 //main-container全局样式
 .app-container {
   padding: 20px 20px 20px 0;
@@ -149,10 +125,6 @@ code {
 
 .pagination-container {
   margin-top: 10px;
-}
-
-.text-center {
-  text-align: center
 }
 
 .sub-navbar {
@@ -184,103 +156,6 @@ code {
     color: rgb(32, 160, 255);
   }
 }
-
-.filter-container {
-  padding-bottom: 10px;
-  .filter-item {
-    display: inline-block;
-    vertical-align: middle;
-    margin-bottom: 10px;
-  }
-}
-
-//refine vue-multiselect plugin
-.multiselect {
-  line-height: 16px;
-}
-
-.multiselect--active {
-  z-index: 1000 !important;
-}
-
-.gl-table.el-table{
-  thead tr th{
-    background: #eef3fe;
-  }
-}
-.gl-selector-box{
-  margin-bottom: 20px;
-  display: flex;
-  .filter{
-    margin-right: 15px;
-    >.el-input{
-      width: 150px;
-    }
-  }
-  .el-input-group{
-    width: auto;
-  }
-  .el-input-group__prepend{
-    width: 130px;
-  }
-}
-.gl-page{
-  float: right;
-  margin: 15px 0 20px 0;
-}
-
-.gl-header-sel{
-  display: flex;
-  justify-content: space-between;
-  >span{
-    display: block;
-    line-height: 100%;
-  }
-  >div{
-    >*{
-      margin-left: 15px;
-    }
-  }
-}
-
-.gl-finance-layout{
-  .el-card__body{
-    padding: 0
-  }
-  .layout{
-    >*{
-      height: 100px;
-      color: #fff;
-      text-align: center;
-    }
-    >:nth-child(1){
-      background: #337ab7;
-    }
-    >:nth-child(2){
-      background: #42b983;
-    }
-    >:nth-child(3){
-      background: red;
-    }
-  }
-}
-//nav-tab
-.tab-nav{
-  margin:10px 0;
-}
-//表单样式
-.gl-form-box{
-  .el-input, .el-textarea{
-    width: 232px;
-  }
-  .inp{
-    width:232px;
-  }
-  .filter{
-    margin-right:15px;
-  }
-}
-
 
 /* 滚动条样式美化  fangyuan*/
 ::-webkit-scrollbar-track-piece { //滚动条凹槽的颜色，还可以设置边框属性
@@ -404,100 +279,6 @@ table.yuan-table{
   }
 }
 
-/*弹窗*/
-.gl-dialog{
-  .el-dialog{
-    border-radius:5px;
-  }
-  .el-dialog__header{
-    padding: 10px 16px 10px 32px;
-    background-color:#ECEFF8;
-    border-radius:5px 5px 0 0;
-  }
-  .el-dialog__title {
-    line-height: 25px;
-    color: #3D434A;
-  }
-  .el-dialog__headerbtn{
-    top:15px;
-    right:16px;
-  }
-  .el-dialog__body {
-    padding: 24px 32px;
-  }
-  .gl-page{
-    float:none;
-    text-align:right;
-    margin: 15px 0 0 0;
-  }
-}
-
-/* 搜索项 */
-.search {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  .item {
-    margin-right: 8px;
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    .label {
-      flex-shrink: 0;
-      font-size: 14px;
-    }
-  }
-}
-
-.footer-left {
-  .footer-left-span {
-    margin-left: 10px;
-    cursor: pointer;
-    &.blue {
-      color: #578EFA;
-    }
-    &.orange {
-      color: #FD932B;
-    }
-  }
-}
-
-.tl {
-  text-align: left;
-}
-.tc {
-  text-align: center;
-}
-
-.blue {
-  color: #578EFA;
-}
-
-.mr-5 {
-  margin-right: 5px;
-}
-.fs-12 {
-  font-size: 12px;
-}
-.shrink0 {
-  flex-shrink: 0;
-}
-.radio-group {
-  .item {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-  }
-}
-.application-container .el-card__body{
-  padding:0 20px;
-}
-.empty {
-  text-align: center;
-}
-.shop-list .delete {
-  color: #578EFA;
-}
 /* 四级联动定制样式 fangyuan*/
 .area-cascader-wrapper{
   .area-select{
@@ -506,5 +287,13 @@ table.yuan-table{
       padding:0!important;
       text-indent: 10px;
     }
+  }
+}
+
+/* 取色器样式 */
+.m-colorPicker{
+  z-index:10;
+  .box{
+    width:230px!important;
   }
 }

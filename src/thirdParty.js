@@ -12,13 +12,14 @@ Vue.use(Element, {
 })
 import qs from 'qs';
 Vue.prototype.$qs = qs;
-
+import vueJsonp from 'vue-jsonp';  //使用jsonp
+Vue.use(vueJsonp);
 
 /* 第三方组件库导入 */
 
 //取色器(此插件有兼容性问题，待定)
-// import vcolorpicker from 'vcolorpicker'
-// Vue.use(vcolorpicker)
+import vcolorpicker from 'vcolorpicker'
+Vue.use(vcolorpicker)
 
 //拖拽
 import VueDND from 'awe-dnd';
@@ -44,3 +45,7 @@ VueAMap.initAMapApiLoader({
   // 默认高德 sdk 版本为 1.4.4
   v: '1.4.4'
 });
+
+//时间轴
+import LightTimeline from 'vue-light-timeline';
+Vue.use(LightTimeline);

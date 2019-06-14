@@ -1,4 +1,4 @@
-import { Message, MessageBox } from "element-ui";
+import { MessageBox } from "element-ui";
 import * as order from "./order"; //订单接口
 import * as shop from "./shop"; //商铺接口shop
 

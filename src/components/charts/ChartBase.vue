@@ -1,13 +1,12 @@
 /* 图表组件基类 */
 <template>
-  <div class="chart" ref="chart" :style="{height: height}" v-loading="!chartData"></div>
+  <div class="chart" ref="chart" :style="{width: width, height: height}"></div>
 </template>
 
 <script type='es6'>
 import echarts from 'echarts';  // 引入 ECharts 模块
 export default {
-  name: "ChartBase",
-  // props:['title', 'downloadTitle', 'data'],
+  name: "chartBase",
   props:{
     title:{
       type: String,
@@ -16,6 +15,10 @@ export default {
     downloadTitle:{
       type: String,
       default: '下载图表'
+    },
+    width:{
+      type: String,
+      default: '100%'
     },
     height:{
       type: String,
@@ -64,7 +67,7 @@ export default {
       const _self = this;
       if (this.$refs.chart) {
         this.eChart = this.$refs.chart;
-        this.oChart = this.engine.init(this.eChart);
+        this.oChart = this.engine.init(this.eChart, null, {renderer: 'svg'});
         document.body.onresize = ()=>{
           _self.oChart.resize();
         }
@@ -88,5 +91,3 @@ export default {
   components: {}
 };
 </script>
-<style lang="sass" scoped>
-</style>
