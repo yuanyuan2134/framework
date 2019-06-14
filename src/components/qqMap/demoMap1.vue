@@ -4,10 +4,12 @@
     <div id="mapContainer" ref="mapContainer" :style="{width: width, height: height}"></div>
     <el-input
       placeholder="关键词"
-      suffix-icon="el-icon-date"
+      suffix-icon="el-icon-search"
       v-model="keyword" @keyup="search" @blur="search">
     </el-input>
-    <div ref="infoDiv" class="info-div"></div>
+    <div ref="infoDiv" class="info-div">
+      <span class="temp">这里是搜索结果列表</span>
+    </div>
   </div>
 </template>
 
@@ -22,7 +24,7 @@ export default {
       searchParams: {
         location: '北京',
         pageIndex:  1,
-        pageCapacity: 3,
+        pageCapacity: 4,
         autoExtend: true,
       }
     };
@@ -99,26 +101,25 @@ export default {
 </script>
 <style lang="scss" scoped>
 .wrapper{
-  position: relative;
   #mapContainer {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    margin-right: 0;
   }
   .el-input{
-    position:absolute;
-    width:200px;
-    right:700px;
-    top:0
+    width: 600px;
+    margin: 20px;
   }
   .info-div{
-    position: absolute;
-    top: 50px;
-    left: 10px;
-    width: 400px; 
+    width: 600px;
     height: 300px;
-    background: #fff;
+    background: #f3f1f1;
+    margin: 0 auto;
+    padding-top: 5px;
+    text-align: left;
+    .temp{
+      margin-left: 5px;
+    }
     ol{
       height:300px;
       overflow-y: auto;
