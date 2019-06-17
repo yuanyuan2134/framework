@@ -43,7 +43,8 @@ export const syncRouterMap = [ //同步路由表
   {
     path: '',
     component: Layout,
-    redirect: '/login',
+    //redirect: '/login',
+    redirect: '/shop/decoration'
   }
 ]  
 export const asyncRouterMap = [  //异步路由表
