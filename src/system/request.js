@@ -81,7 +81,6 @@ class Ajax {
     let cid = store.getters.userInfo && store.getters.userInfo.cid ? store.getters.userInfo.cid : '';
     let shopInfoId = store.getters.userInfo && store.getters.userInfo.shopInfoId ? store.getters.userInfo.shopInfoId 
     : '';
-    // let shopInfoId = 1;
 
       //拼接全部参数
       if (config.method == "post") {
@@ -102,28 +101,6 @@ class Ajax {
 
   //配置接口地址
   setApiAddress(config) {
-    /*if(process.env.NODE_ENV == 'development') {
-      let prefix = 'https://test-m-aiyouyi.yun300.cn'
-
-      if(!config.baseURL){
-        if(config.apiType){
-          switch(config.apiType) {
-            case 'member':  
-              config.baseURL = `${prefix}/api-member-web/member/api.do`;
-            break;
-            case 'coupon':  
-              config.baseURL = `${prefix}/coupon/api.do`; 
-            break;
-            case 'monitor': 
-              config.baseURL = `${prefix}/monitor-web/monitor/api.do`;
-            break;
-          }
-        }else{
-          config.baseURL = `${prefix}/api-member-web/member/api.do`;
-        }
-      }
-    }
-    return*/
     if(!config.baseURL){
       if(config.apiType){
         switch(config.apiType) {
@@ -131,7 +108,6 @@ class Ajax {
             config.baseURL = `${process.env.DATA_API}/api-member-web/member/api.do`;
           break;
           case 'coupon':  //优惠券系统
-            // config.baseURL = `${process.env.DATA_API}/api-coupon-web/coupon/api.do`; //研发环境
             config.baseURL = `${process.env.DATA_API}/coupon/api.do`; //测试环境
           break;
           case 'monitor': //埋点项目

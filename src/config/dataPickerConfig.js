@@ -1,5 +1,5 @@
 //日期选择器配置
-export default pickerOptions = [
+var pickerOptions = [
   {
     text: '今天',
     onClick(picker) {
@@ -37,3 +37,4 @@ export default pickerOptions = [
     }
   }
 ]
+export default pickerOptions

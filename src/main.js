@@ -22,6 +22,7 @@ Vue.config.productionTip = false
 
 /* 第三方 */
 import './thirdParty' 
+import './permission'
 
 /* 自定义全局变量或方法挂载 */
 import utils from '@/utils';
@@ -31,6 +32,7 @@ Vue.prototype.$percent = utils.percent;
 Vue.prototype.$globalEvent = utils.eventHub.default;  //挂载全局事件对象，跨组件发通知,单例对象
 import api from '@/api';
 Vue.prototype.$api = api;
+import './icons'
 
 
 /* 自定义公共模块 */
