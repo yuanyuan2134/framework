@@ -3,38 +3,19 @@ import { getToken, setToken, removeToken } from '@/system/auth'
 
 const user = {
   state: {
-    user: '',
-    status: '',
-    code: '',
     token: getToken(),
     name: '',
     avatar: '',
-    introduction: '',
     roles: [],
-    setting: {
-      articlePlatform: []
-    },
     userInfo: null
   },
 
   mutations: {
-    SET_CODE: (state, code) => {
-      state.code = code
-    },
     SET_TOKEN: (state, token) => {
       state.token = token
     },
     SET_UNIACID:(state, uniacid) =>{
       state.uniacid = uniacid
-    },
-    SET_INTRODUCTION: (state, introduction) => {
-      state.introduction = introduction
-    },
-    SET_SETTING: (state, setting) => {
-      state.setting = setting
-    },
-    SET_STATUS: (state, status) => {
-      state.status = status
     },
     SET_NAME: (state, name) => {
       localStorage.setItem('name', name);
