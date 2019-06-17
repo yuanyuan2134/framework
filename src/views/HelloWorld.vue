@@ -51,10 +51,12 @@
     </el-card>
 
     <!-- 四级联动demo -->
-    <el-card>
+    <el-card style="height:420px;">
       <h1>四级联动</h1>
       <area-select type='all' v-model='selected' :data='$pcaa' :level='3'></area-select>
       <p>{{selected}}</p>
+      <area-cascader :level="2" :data='$pcaa' v-model='selected2'></area-cascader>
+      <p>{{selected2}}</p>
     </el-card>
 
     <!-- 图表demo -->
@@ -94,7 +96,8 @@ export default {
         }
       ],
       chartReady: false,
-      selected: []
+      selected: [],
+      selected2: []
     }
   },
   created() {
@@ -134,5 +137,8 @@ a {
 }
 .el-card{
   margin-bottom:20px;
+}
+.line-container::after{
+  left:1em;
 }
 </style>
