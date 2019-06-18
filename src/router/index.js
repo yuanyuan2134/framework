@@ -65,7 +65,7 @@ export const asyncRouterMap = [  //异步路由表
         path: 'decoration',
         component: () => import('@/views/shop/decoration'),
         name: 'shopDecoration',
-        meta: { title: '店铺装修', noCache: true }
+        meta: { title: 'demo页', noCache: true }
       },
     ]
 	}
